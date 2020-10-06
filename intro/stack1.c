@@ -44,6 +44,6 @@ element peek()
 		fprintf(stderr, "error: peek from the empty stack\n");
 		exit(1);
 	}
-	else return stack[top];
+	else return stack[top]; 
 }
 
