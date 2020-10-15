@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "stack1.h"
+#include "stack.h"
 
 // 스택을 전역 변수로 구현한다.
 

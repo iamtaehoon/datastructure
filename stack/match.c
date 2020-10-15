@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "stack1.h"
+#include "stack.h"
 
 int main(void)
 {
