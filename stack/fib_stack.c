@@ -50,57 +50,57 @@ int fib(int n) {
   if (n == 1 || n == 2) {
     // return 1;
     
-    int ret = pop();  // 리턴할 주소를 pop
+      int ret = pop();  // 리턴할 주소를 pop
     
-    push( 1 );  // 리턴 값을 push
+      push( 1 );  // 리턴 값을 push
     
-    if ( ret == 2 ) goto L2;
-    else if ( ret == 3 ) goto L3;
-    else if ( ret == 4 ) goto L4;
+      if ( ret == 2 ) goto L2;
+      else if ( ret == 3 ) goto L3;
+      else if ( ret == 4 ) goto L4;
   }
   else {
     //[첫 번째 재귀호출]: fib_n_1 = fib(n-1);
 
-    int fib_n_1, fib_n_2, ret;
+      int fib_n_1, fib_n_2, ret;
 
-    push( n );  // 현재 n의 값을 stack에 보관
-    push( 2 );  // 리턴 주소 L2를 push
+      push( n );  // 현재 n의 값을 stack에 보관
+      push( 2 );  // 리턴 주소 L2를 push
     
-    n = n - 1;  // fib의 n을 n-1로 업데이트
+      n = n - 1;  // fib의 n을 n-1로 업데이트
     
-    goto L1;
+      goto L1;
     
   L2:  // 첫 번째 fib 함수 호출 후 돌아올 자리
     
-    fib_n_1 = pop();  // fib(n-1) 리턴 값을 stack에서 pop
-    n = pop(); // 원래 n의 값으로 복구
+      fib_n_1 = pop();  // fib(n-1) 리턴 값을 stack에서 pop
+      n = pop(); // 원래 n의 값으로 복구
 
     
     //[두 번째 재귀호출]: fib_n_2 = fib(n-2);
     
-    push( n );
-    push( fib_n_1 );   // n뿐만 아니라 fib_n_1도 저장!
-    push( 3 );  // 리턴 주소 L3를 push
+      push( n );
+      push( fib_n_1 );   // n뿐만 아니라 fib_n_1도 저장!
+      push( 3 );  // 리턴 주소 L3를 push
 
-    n = n - 2;  // fib의 n을 n-2로 업데이트
+      n = n - 2;  // fib의 n을 n-2로 업데이트
     
-    goto L1;
+      goto L1;
     
   L3:  // 두 번째 fib 함수 호출 후 돌아올 자리
 
-    fib_n_2 = pop();
-    fib_n_1 = pop();
-    n = pop();
+      fib_n_2 = pop();
+      fib_n_1 = pop();
+      n = pop();
 
     // return fib_n_1 + fib_n_2;
     
-    ret = pop(); // 리턴할 주소를 push
+      ret = pop(); // 리턴할 주소를 push
     
-    push( fib_n_1 + fib_n_2 ); // 리턴 값을 push
+      push( fib_n_1 + fib_n_2 ); // 리턴 값을 push
     
-    if ( ret == 2 ) goto L2;
-    else if ( ret == 3 ) goto L3;
-    else if ( ret == 4 ) goto L4;
+      if ( ret == 2 ) goto L2;
+      else if ( ret == 3 ) goto L3;
+      else if ( ret == 4 ) goto L4;
   }
 
  L4:
