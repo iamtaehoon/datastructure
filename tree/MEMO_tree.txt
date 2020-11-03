@@ -1,0 +1,64 @@
+
+
+트리(tree)
+
+ - 트리의 정의는 그래프를 배울 때 다시 합니다.
+ - 노드, 루트, 서브트리
+ - 단말노드(terminal node), 비단말노드(non-terminal node)
+ - 레벨(level) : 문헌마다 정의가 조금씩 차이가 있음
+ - 높이(height)
+ - 차수(degree)
+
+이진트리(binary tree)
+ - 포화이진트리(full binary tree)
+ - 완전이진트리(complete binary tree)
+ - 일반 이진 트리
+
+이진트리를 프로그램(자료형)으로 표현하는 방법
+ - 배열 ===> 9장 우선순위 큐에서도 활용됨
+ - 구조체(포인터)
+
+* 박상현
+
+//  +----+-------+----+
+//  |  l | data  | r  |
+//  +----+-------+----+
+
+// 구조체 자료형: 트리 노드 
+typedef struct TreeNode {
+  struct TreeNode* left;
+  DATATYPE data;
+  struct TreeNode* right;
+} TreeNode;
+
+이진트리의 순회(traversal)
+ - 전위순회(preorder traversal)  : 부모 노드 먼저 
+ - 중위순회(inorder traversal)
+   : 왼쪽 자식노드(로 시작되는 서브트리)->부모 노드->오른쪽 자식노드(로 시작되는 서브트리)
+ - 후위순회(postorder traversal) : 자식 노드(로 시작되는 서브트리) 먼저
+
+
+트리의 연산
+ - 트리의 노드 구하기 : get_node_count()
+ - 트리의 높이 구하기 : get_height()
+ - 트리의 단말노드(noterminal node, leaf)구하기 : get_leaf_node()
+
+(매우 중요!!)
+
+
+이진탐색트리
+
+ - 정의:
+     모든 노드를 기준으로 왼쪽 서브트리의 노드들보다 <=이고,
+                       오른쪽 서브트리의 노드들보다 >=이고,
+		       
+ - 탐색 (노드 개수가 n)
+    : 최상의 경우 log n번 비교
+    : 최악의 경우 n번 비교
+
+
+ - 이진탐색트리에 새로운 노드를 추가
+
+
+ - 이진탐색트리에 기존의 노드를 삭제
+
